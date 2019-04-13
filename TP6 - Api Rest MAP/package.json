@@ -1,0 +1,17 @@
+{
+  "name": "mapeo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ponicla",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.10",
+    "require": "^2.4.20"
+  }
+}

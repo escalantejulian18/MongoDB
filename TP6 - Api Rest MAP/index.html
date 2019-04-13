@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script language="JavaScript" type="text/Javascript" src="JAVASCRIPT/funciones.js"></script>
+
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+    <title>Restaurant</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+      var availableTags = ['Bakery','Hamburgers','Jewish/Kosher','Chinese', 'American','Delicatessen','Bagels/Pretzels','Continental','Pizza','German','French','Irish','Donuts','Mexican','Pizza/Italian','Italian','Café/Coffee/Tea','Spanish','Pancakes/Waffles','Soul Food','Seafood','Hotdogs','Steak','Latin (Cuban, Dominican, Puerto Rican, South & Central American)','Japanese','Greek','Thai','Chinese/Cuban','Indian','Mediterranean','Caribbean','Korean','Bottled beverages, including water, sodas, juices, etc.','Tex-Mex','Russian','Polish','Eastern European','Asian','Vegetarian','Middle Eastern','Egyptian','Other','Chicken','Portuguese','Chinese/Japanese','Indonesian','Sandwiches/Salads/Mixed Buffet','Ice Cream, Gelato, Yogurt, Ices','Turkish','CafÃ©/Coffee/Tea','Filipino','Vietnamese/Cambodian/Malaysia','Brazilian','Afghan','Tapas','Moroccan','Sandwiches','Pakistan','African','English','Barbecue','Peruvian','Juice, Smoothies, Fruit Salads','Creole','Cajun','Polynesian','Bangladeshi','Soups & Sandwiches','Australian','Salads','Southwestern','Soups','Ethiopian','Scandinavian','Nuts/Confectionary','Czech','Fruits/Vegetables','Armenian','Hotdogs/Pretzels','Not Listed/Not Applicable','Iranian'];
+      $( "#search" ).autocomplete({
+        source: availableTags
+      });
+    });
+
+    $('#search').keyup(function(e){
+     if(e.keyCode == 13)
+     {
+       $('#btn').click();
+     }
+   });
+    </script>
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <p class="navbar-brand" >
+        <img class="" src="IMG/logo.svg" height="20" width="20" alt="">
+        <strong>NY</strong>Rest
+      </p>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <!-- Todos los restaurantes de la “8 Avenue”, que obtuvieron calificación A en el 2014. <br>
+            Separarlos en los que obtuvieron menos de 10 puntos (Red), entre 10 y 20,(Yellow) y más <br>
+            de 20 puntos (Green). -->
+            <a class="nav-link" onclick="catA();" role="button">Categoría A<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <!-- Todos los restaurantes de Manhattan que hayan tenido en algún momento calificación C y <br>
+            mostrarlos en el mapa con color azul. -->
+            <a class="nav-link" onclick="catC();" role="button">Categoría C</a>
+          </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+         <input class="form-control mr-sm-2" type="text"
+                id="search" placeholder="consultar menús"
+                aria-label="Search" KeyCode="enter">
+         <button class="btn btn-outline-success my-2 my-sm-0"
+                 onclick="menus();"
+                 id="btn">
+                 Buscar
+         </button>
+       </div>
+      </div>
+    </nav>
+
+    <!-- Mapa -->
+    <div id="map"></div>
+
+    <link rel="stylesheet" href="CSS/estilo.css">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkOX2uzzLsbuLFFe8m_GA2ZVn-j9K6ruo&callback=mapa"> </script>
+
+
+
+  </body>
+</html>
